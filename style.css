@@ -1,0 +1,1087 @@
+/* ============================================
+   بن الحسين - ملف التنسيق الرئيسي
+   مبني على هيكل Woodee
+   ============================================ */
+
+/* ============================================
+   1. إعادة تعيين CSS والأنماط الأساسية
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* متغيرات الألوان - ثيم بن الحسين */
+    /* التدرج الأساسي: إحساس البن الداكن/الأسود */
+    --primary-gradient: linear-gradient(180deg, #1a0f0a 0%, #000000 100%);
+    --primary-dark: #1a0f0a;   /* بني داكن */
+    --primary-darker: #000000; /* أسود نقي */
+    
+    /* الثانوي: بني البن */
+    --secondary: #8D6E63;      
+    
+    /* التمييز: ذهبي/بيج للتفاصيل */
+    --highlight: #D7CCC8;      
+    
+    --text-white: #ffffff;
+    --text-gray: #e0e0e0;
+    
+    /* خلفية الكروت: أسود/بني شفاف */
+    --card-bg: rgba(62, 39, 35, 0.3);
+    
+    /* المسافات */
+    --container-width: 1200px;
+    --section-padding: 80px 20px;
+    
+    /* الخطوط */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-base: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-white);
+    background: var(--primary-gradient);
+    min-height: 100vh;
+    direction: rtl;
+    text-align: right;
+}
+
+/* ============================================
+   2. الفئات المساعدة
+   ============================================ */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--highlight);
+}
+
+/* ============================================
+   3. شريط التنقل
+   الغرض: التنقل الرئيسي عبر جميع الصفحات
+   ============================================ */
+.navbar {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 25px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-menu li a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 10px;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: var(--highlight);
+}
+
+.btn-signin {
+    background: var(--secondary);
+    padding: 8px 20px !important;
+    border-radius: 5px;
+    color: var(--text-white) !important;
+}
+
+.btn-signin:hover {
+    background: var(--highlight) !important;
+    color: var(--primary-dark) !important;
+}
+
+/* قائمة الهامبرجر للموبايل */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-white);
+    transition: 0.3s;
+}
+
+/* ============================================
+   4. الأزرار
+   الغرض: أنماط الأزرار القابلة لإعادة الاستخدام
+   ============================================ */
+.btn-primary {
+    background: var(--secondary);
+    color: var(--text-white);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--highlight);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(215, 204, 200, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--highlight);
+    padding: 12px 30px;
+    border: 2px solid var(--highlight);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: var(--highlight);
+    color: var(--primary-dark);
+}
+
+.btn-highlight {
+    background: var(--highlight);
+    color: var(--primary-dark);
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-highlight:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(215, 204, 200, 0.5);
+}
+
+/* ============================================
+   5. قسم البطل (Hero)
+   الغرض: البانر الرئيسي لصفحة الهبوط
+   ============================================ */
+.hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: var(--section-padding);
+    overflow: hidden;
+}
+
+.hero-banner {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hero-banner:hover .hero-image {
+    transform: scale(1.05);
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(30deg, rgba(141, 110, 99, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(141, 110, 99, 0.1) 87.5%, rgba(141, 110, 99, 0.1)),
+        linear-gradient(150deg, rgba(141, 110, 99, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(141, 110, 99, 0.1) 87.5%, rgba(141, 110, 99, 0.1));
+    background-size: 80px 140px;
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--highlight);
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideInRight 1s ease-out 0.5s both;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    animation: fadeIn 1s ease-out 0.7s both;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    animation: fadeInUp 1s ease-out 0.9s both;
+    justify-content: flex-start;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: popIn 0.6s ease-out forwards;
+}
+
+.stat-item:nth-child(1) {
+    animation-delay: 1.1s;
+}
+
+.stat-item:nth-child(2) {
+    animation-delay: 1.3s;
+}
+
+.stat-item:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+/* ============================================
+   6. قسم الترحيب
+   الغرض: قسم المقدمة
+   ============================================ */
+.welcome {
+    padding: var(--section-padding);
+    background: rgba(26, 15, 10, 0.5);
+}
+
+.welcome-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.welcome-text h2 {
+    font-size: 2.5rem;
+    color: var(--highlight);
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.welcome-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   7. قسم الخدمات
+   الغرض: عرض كروت الخدمات
+   ============================================ */
+.services-preview {
+    padding: var(--section-padding);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.service-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(141, 110, 99, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(215, 204, 200, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: var(--highlight);
+    box-shadow: 0 15px 40px rgba(141, 110, 99, 0.3);
+    background: linear-gradient(135deg, rgba(141, 110, 99, 0.15), rgba(215, 204, 200, 0.1));
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.service-card:hover h3 {
+    color: var(--highlight);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    display: inline-block;
+}
+
+.service-card h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.service-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* ============================================
+   الحركات الأساسية (Keyframes)
+   الغرض: حركات سلسة في جميع أنحاء الموقع
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* التحميل البطيء */
+.lazy-load {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   8. قسم الدعوة للإجراء (CTA)
+   الغرض: قسم الدعوة للإجراء
+   ============================================ */
+.cta {
+    padding: var(--section-padding);
+    background: rgba(141, 110, 99, 0.1);
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* ============================================
+   9. التذييل (Footer)
+   الغرض: تذييل الموقع مع الروابط والمعلومات
+   ============================================ */
+.footer {
+    background: var(--primary-darker);
+    padding: 50px 20px 20px;
+    border-top: 2px solid var(--secondary);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    color: var(--highlight);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-col p,
+.footer-col ul li {
+    color: var(--text-gray);
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li a {
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--highlight);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    padding: 8px 15px;
+    background: rgba(141, 110, 99, 0.1);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--highlight);
+    color: var(--primary-dark);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(141, 110, 99, 0.2);
+    color: var(--text-gray);
+}
+
+/* ============================================
+   10. أنماط النوافذ المنبثقة (Modal)
+   الغرض: نوافذ المصادقة المنبثقة
+   ============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--primary-dark);
+    margin: 5% auto;
+    padding: 40px;
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    color: var(--text-gray);
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: var(--highlight);
+}
+
+.modal-content h2 {
+    color: var(--highlight);
+    margin-bottom: 30px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(141, 110, 99, 0.1);
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    color: var(--text-white);
+    font-size: 1rem;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--highlight);
+}
+
+.auth-form button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-gray);
+}
+
+.form-footer a {
+    color: var(--highlight);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   11. أنماط صفحة من نحن
+   ============================================ */
+.about-hero {
+    padding: var(--section-padding);
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    color: var(--highlight);
+    margin-bottom: 30px;
+}
+
+.about-content {
+    padding: var(--section-padding);
+    background: rgba(26, 15, 10, 0.5);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.about-section h2 {
+    color: var(--secondary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* ============================================
+   12. أنماط صفحة المنتجات
+   ============================================ */
+.services-hero {
+    padding: var(--section-padding);
+    text-align: center;
+    position: relative;
+}
+
+.services-hero-banner {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.services-hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.services-hero h1 {
+    font-size: 4rem;
+    color: var(--highlight);
+}
+
+.services-detailed {
+    padding: var(--section-padding);
+}
+
+.service-detail {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(141, 110, 99, 0.2);
+}
+
+.service-detail-content {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.service-detail-text h3 {
+    color: var(--highlight);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.service-detail-text p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.service-detail-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.service-detail:hover .service-detail-image img {
+    transform: scale(1.05);
+}
+
+.service-detail ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+.service-detail ul li {
+    padding: 10px 0;
+    padding-right: 30px;
+    position: relative;
+}
+
+.service-detail ul li:before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: var(--highlight);
+    font-weight: bold;
+}
+
+/* ستايل خاص لمعرض المنتجات */
+.product-showcase {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(141, 110, 99, 0.2);
+}
+
+.product-header {
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-header h3 {
+    color: var(--highlight);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--secondary);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.product-header p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.product-specs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    list-style: none;
+}
+
+.product-specs li {
+    background: rgba(0,0,0,0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--secondary);
+    font-size: 0.9rem;
+    color: var(--highlight);
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #333;
+    height: 300px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--highlight);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   13. أنماط صفحة الأسئلة الشائعة
+   ============================================ */
+.faqs-section {
+    padding: var(--section-padding);
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    margin-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(141, 110, 99, 0.2);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: right;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.faq-question:hover {
+    color: var(--highlight);
+}
+
+.faq-question:after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--secondary);
+    transition: transform 0.3s;
+}
+
+.faq-question.active:after {
+    transform: rotate(45deg);
+    color: var(--highlight);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 20px;
+}
+
+.faq-answer p {
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* ============================================
+   14. أنماط صفحة الاتصال
+   ============================================ */
+.contact-section {
+    padding: var(--section-padding);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info h3 {
+    color: var(--highlight);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.contact-item {
+    margin-bottom: 25px;
+}
+
+.contact-item h4 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.contact-item p,
+.contact-item a {
+    color: var(--text-gray);
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: var(--highlight);
+}
+
+.contact-form {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(141, 110, 99, 0.2);
+}
+
+.contact-form h3 {
+    color: var(--highlight);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background: rgba(141, 110, 99, 0.1);
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    color: var(--secondary);
+    font-size: 1rem;
+    font-family: var(--font-primary);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--highlight);
+}
