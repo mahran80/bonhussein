@@ -102,6 +102,7 @@ body {
     height: 40px;
     width: auto;
     border-radius: 25px;
+
 }
 
 .logo span {
@@ -1084,4 +1085,170 @@ body {
 .form-group select:focus {
     outline: none;
     border-color: var(--highlight);
+}
+
+/* ============================================
+   15. التصميم المتجاوب
+   الغرض: نقاط التوقف للموبايل والتابلت
+   ============================================ */
+
+/* أنماط التابلت (768px وأقل) */
+@media (max-width: 768px) {
+    /* التنقل */
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 30px 0;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    /* قسم البطل */
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .stat-item {
+        text-align: center;
+    }
+    
+    /* قسم الترحيب */
+    .welcome-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* شبكة الخدمات */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* شبكة من نحن */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* حاوية الاتصال */
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* التذييل */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* عناوين الأقسام */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* الدعوة للإجراء */
+    .cta h2 {
+        font-size: 2rem;
+    }
+    
+    /* تفاصيل الخدمة */
+    .service-detail-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* معرض المنتجات */
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item {
+        height: 250px;
+    }
+}
+
+/* أنماط الموبايل (480px وأقل) */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 50px 15px;
+        --font-size-base: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .about-hero h1,
+    .services-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 30px 20px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-highlight {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .product-header h3 {
+        font-size: 1.8rem;
+    }
+    
+    .product-header p {
+        font-size: 1rem;
+    }
+    
+    .product-showcase {
+        padding: 25px 20px;
+    }
+    
+    .contact-form {
+        padding: 25px 20px;
+    }
+    
+    .contact-form h3 {
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+    }
+    
+    .service-icon {
+        font-size: 2.5rem;
+    }
 }
