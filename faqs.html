@@ -1,0 +1,226 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Woodee Furniture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="logo.png" alt="Woodee Logo">
+                    <span>WOODEE</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Products</a></li>
+                    <li><a href="faqs.html" class="active">FAQs</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="faqs-section">
+        <div class="container">
+            <h1 class="section-title">Frequently Asked Questions</h1>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Find answers to common questions about Woodee furniture, materials, and customization. Can't find what you're looking for? <a href="contactus.html" style="color: var(--secondary); text-decoration: none; font-weight: bold;">Contact us</a> directly!
+            </p>
+
+            <div class="faq-container">
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What types of furniture does Woodee manufacture?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Woodee specializes in smart, integrated furniture solutions. Our flagship products include the "WE" integrated bed unit (bed, wardrobe, desk in one), classic coffee tables with marquetry, premium shoe cabinets with laser-engraved mirrors, and custom architectural maquettes for factories.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What materials do you use for production?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We strictly use high-quality natural wood. Our primary material is Beech wood (Zan) combined with high-grade panels for durability. We also incorporate laser-engraved mirrors, glass work, and premium metal accessories for mechanisms.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Who designs the furniture pieces?
+                    </button>
+                    <div class="faq-answer">
+                        <p>All our furniture is designed by Interior Designer <strong>Ahmed Bakr</strong>. He focuses on "Smart Furniture" concepts that maximize space utility without compromising on the aesthetic appeal, blending classic art with modern functionality.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I customize the dimensions and colors?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Since we are the manufacturers, we can customize any piece to fit your specific room dimensions. You can also choose from a wide range of paint finishes, including Acrylic, Lacquer, or natural wood stains to match your home decor.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What is the "Integrated Bed Unit"?
+                    </button>
+                    <div class="faq-answer">
+                        <p>The Integrated Bed Unit is our signature space-saving solution. It combines a sleeping area, a wardrobe shutter, storage drawers, and sometimes a study desk into a single compact unit. It's perfect for small bedrooms, studio apartments, or children's rooms.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you provide warranty on your products?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we stand behind the quality of our craftsmanship. Woodee offers a warranty on wood durability and manufacturing defects. We use high-quality hinges and runners to ensure longevity for daily use.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long does manufacturing and delivery take?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Manufacturing time varies depending on the complexity of the order. Standard pieces usually take 2-3 weeks, while fully custom integrated units or bedroom sets may take 4-6 weeks. We will provide a specific timeline when you place your order.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you offer interior design services?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Beyond furniture manufacturing, we offer full interior design services. We specialize in layout planning, 3D visualization, and even creating detailed architectural maquettes for factories and large-scale projects.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What is "Oyima" and "Marquetry"?
+                    </button>
+                    <div class="faq-answer">
+                        <p>These are classic woodworking techniques we use for our tables. "Oyima" refers to hand-carved wood ornamentation, while "Marquetry" involves applying pieces of veneer to a structure to form decorative patterns. These techniques add a touch of luxury and tradition to our pieces.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you deliver to all governorates?
+                    </button>
+                    <div class="faq-answer">
+                        <p>We are based in Alexandria (Al Agamy), but we arrange delivery to most governorates across Egypt. Shipping costs vary based on location and the size of the furniture order. Contact us for a shipping quote.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What are your payment terms?
+                    </button>
+                    <div class="faq-answer">
+                        <p>For custom orders, we typically require a deposit (down payment) to begin the manufacturing process, with the remaining balance due upon delivery and inspection of the furniture. We accept cash and bank transfers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can you create a Maquette for my factory?
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, this is one of our specialized services. Engineer Ahmed Bakr has extensive experience in creating detailed scale models (maquettes) for furniture factories, helping you visualize production lines and space utilization before construction.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you do maintenance on old furniture?
+                    </button>
+                    <div class="faq-answer">
+                        <p>While our primary focus is manufacturing new pieces, we can assess requests for refurbishing or modifying high-quality wood furniture on a case-by-case basis. Please send us photos of your item for an assessment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How do I clean and care for the furniture?
+                    </button>
+                    <div class="faq-answer">
+                        <p>To maintain the finish, simply dust regularly with a soft, dry cloth. Avoid using harsh chemical cleaners or abrasive materials. For wood surfaces, you can use a high-quality furniture polish occasionally to maintain the luster.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How do I place an order?
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can get in touch with us via WhatsApp, email, or by visiting our workshop. We recommend sending a message first with the type of furniture you are interested in, and we will guide you through the selection and customization process.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="color: var(--secondary); margin-bottom: 20px;">Still Have Questions?</h3>
+                <p style="margin-bottom: 30px; font-size: 1.1rem;">We're here to help you design your dream home.</p>
+                <button class="btn-highlight" onclick="window.location.href='contactus.html'">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Woodee</h4>
+                    <p>Interior Design & Furniture Factory. Creating timeless pieces for modern homes.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Products</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Email: info@woodee.com</li>
+                        <li>Designer: Ahmed Bakr</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Woodee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> -->

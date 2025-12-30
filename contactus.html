@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - بن الحسين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="logo.png" alt="بن الحسين">
+                    <span>بن الحسين</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="services.html">المنتجات</a></li>
+                    <li><a href="contactus.html" class="active">تواصل معنا</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-section">
+        <div class="container">
+            <h1 class="section-title">تواصل معنا</h1>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                جاهزين نقدملك أفضل قهوة مصرية أصيلة؟ تواصل معانا دلوقتي واحصل على أفضل العروض والأسعار!
+            </p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <p style="margin-bottom: 30px; color: var(--text-gray);">تواصل معانا للحصول على عروض أسعار، طلبات مخصصة، أو استفسارات عن عروض الجملة.</p>
+                    
+                    <div class="contact-item">
+                        <h4>📧 البريد الإلكتروني</h4>
+                        <p><a href="mailto:bonhussein1000@gmail.com">bonhussein1000@gmail.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>📞 الهاتف</h4>
+                        <p><a href="#">+20 01125184061</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>📱 واتساب</h4>
+                        <p><a href="#">+20 01125184261</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>📍 الموقع</h4>
+                        <p>فرع العجمي - اكتوبر</p>
+                    </div>
+
+                    <div class="contact-item" style="margin-top: 40px;">
+                        <h4>🕒 مواعيد العمل</h4>
+                        <p>السبت - الخميس: 9:00 صباحاً - 9:00 مساءً</p>
+                        <p style="margin-top: 5px;">الجمعة: مغلق</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>أرسل لنا طلبك</h3>
+                    
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        
+                        <input type="hidden" name="subject" value="طلب جديد من موقع بن الحسين">
+                        <input type="hidden" name="from_name" value="موقع بن الحسين">
+                        <input type="checkbox" name="botcheck" style="display: none;">
+
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">المنتج المطلوب</label>
+                            <select id="service" name="service">
+                                <option value="">اختر نوع المنتج</option>
+                                <option value="قهوة ساده فاتح">قهوة ساده فاتح</option>
+                                <option value="قهوة ساده وسط">قهوة ساده وسط</option>
+                                <option value="قهوة محوج فاتح">قهوة محوج فاتح</option>
+                                <option value="قهوة محوج وسط">قهوة محوج وسط</option>
+                                <option value="عروض الجملة">عروض الجملة</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">رسالتك *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="اكتب تفاصيل طلبك أو استفسارك هنا..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">إرسال الطلب</button>
+                    </form>
+
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-gray); text-align: center;">
+                        * الحقول المطلوبة
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 80px; padding: 40px; background: var(--card-bg); border-radius: 10px;">
+                <h3 style="color: var(--secondary); margin-bottom: 15px;">عايز رد أسرع؟</h3>
+                <p style="margin-bottom: 25px; font-size: 1.1rem;">
+                    كلمنا على الواتساب واحصل على رد فوري على طلبات الجملة!
+                </p>
+                <a href="https://wa.me/201125184261" target="_blank">
+                    <button class="btn-highlight">تواصل عبر واتساب</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>بن الحسين</h4>
+                    <p>قهوة مصرية أصيلة. جودة تليق بيك وتفرق في كل فنجان!</p>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="services.html">المنتجات</a></li>
+                        <li><a href="contactus.html">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li>البريد: bonhussein1000@gmail.com</li>
+                        <li>الموقع: فرع العجمي - اكتوبر</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/17T9dA66tr/?mibextid=wwXIfr" target="_blank">فيسبوك</a>
+                        <a href="#" target="_blank">انستجرام</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 بن الحسين. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
